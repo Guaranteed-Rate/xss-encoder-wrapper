@@ -2,7 +2,7 @@
   :description "Provide Clojure wrapper functions to the OWASP Java Encoder library's the important
                'Encode' static methods as a defense against Cross-Site Scripting (XSS)."
 
-  :url "http://github.com/kwwall-gri/xss-encoder-wrapper"
+  :url "http://github.com/Giaranteed-Rate/xss-encoder-wrapper"
 
   :author "kevin.wall@rate.com"
 
