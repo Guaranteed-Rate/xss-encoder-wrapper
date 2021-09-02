@@ -2,6 +2,9 @@
 /classes
 .project
 *.swp
+*.old
+*.out
+*.bak
 *~
 .idea/
 *.iml
