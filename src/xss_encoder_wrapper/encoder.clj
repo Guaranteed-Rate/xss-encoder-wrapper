@@ -12,6 +12,16 @@
   (:import [org.owasp.encoder Encode])
   )
 
+;; CODE REVIEW - @paul - The implementation of these are all dirt simple and the pattern is the same for all of them.
+;;    What I'm interested in specifically, is given these all use the same pattern, it seems that maybe some other way
+;;    might be preferred in writing these (e.g., macros?).
+;;
+;;    I am also particularly interested in feedback regarding the documentation. (Note that there are several errors
+;;    I've found in the Javadoc for the 'Encode' class. I'm going to be making a PR this weekend to get that corrected,
+;;    but it will probably be awhile until they drop a new release that gets picked up by javadoc.io. Just letting
+;;    you know because you may see a few discrepancies in what's documented here and what is in the referenced Javadoc.)
+;;
+
 (defn for-html
   "Encodes for (X)HTML text content and text attributes. It is NOT suitable for script attributes, such as
   'onclick', 'onload', etc. (Use 'for-javascript' for that.) If used with HTML text attributes, the attributes
@@ -23,14 +33,6 @@
   (if (empty? unstrusted-string)
     ""
     (Encode/forHtml unstrusted-string)))
-
-;; ========= Begin REPL tests ==========
-(for-html "")                                               ;; => ""
-(for-html nil)                                              ;; => ""
-(for-html "   ")                                            ;; => "   "
-(for-html "test \"hello\"<script>alert(1)</script> more. What's expected?")   ;; => "test &#34;hello&#34;&lt;script&gt;alert(1)&lt;/script&gt; more. What&#39;s expected?"
-;; ========= End REPL tests ==========
-
 
 (defn for-css-string
   "Encodes for CSS strings. The context MUST be surrounded by quotation characters (either single or double quotes).

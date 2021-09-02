@@ -2,6 +2,18 @@
   (:require [clojure.test :refer :all]
             [xss-encoder-wrapper.encoder :refer :all]))
 
+;; CODE REVIEW - @paul - Given the "code as data" construction in functional programming in general and in Lisp derived
+;;    languages in particular, I think it might make more sense to strip out all the tests for nil and "" and just
+;;    collect all that into one (or 2) separate new tests (e.g., 'nil-or-empty-case') and then to test all the
+;;    'encode/for-xyz' functions there, but I didn't want to spend any more time restructuring tests since what's here
+;;    covers those cases, and I have too many other things on my plate to do than to be spending additional time on
+;;    this. But if you wish to restructure these tests that way, feel free to mention it. If I was a Clojure expert
+;;    though, that's probably how I would have designed it.
+;;
+;;    Also, feel free to suggest any additional tests.
+;;
+
+
 ;;
 ;;  These are pretty much minimal tests for sanity testing, which hopefully is all that is needed
 ;;  as the OWASP Java Encoder library has its own set of extensive unit tests as part of its code

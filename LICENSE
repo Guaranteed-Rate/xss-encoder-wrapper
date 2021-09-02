@@ -1,3 +1,9 @@
 Copyright © 2021 Guaranteed Rate, Inc. -- All Rights Reserved
 
 This program and the accompanying materials are proprietary information of Guaranteed Rate, Inc.
+
+# CODE REVIEW - @paul - Do we need anything else here for the moment? My long term goal -- if I could get management to
+#                       agree, would be to release this as FOSS and ideally, get the contributors for the
+#                       OWASP Java Encoder project to pick up the support, but we'll see. Baby steps. I did look at
+#                       a few other Clojure libraries that claimed to provide XSS defense and almost none of them
+#                       had contexts to support CSS and URI components which is why I ended up writing this wrapper.
