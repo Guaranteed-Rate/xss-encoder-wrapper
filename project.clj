@@ -1,3 +1,5 @@
+;; CODE REVIEW - @paul - Please suggest anything else that should go here or anything that is here that's amiss.
+
 (defproject xss-encoder-wrapper "0.1.0-SNAPSHOT"
   :description "Provide Clojure wrapper functions to the OWASP Java Encoder library's the important
                'Encode' static methods as a defense against Cross-Site Scripting (XSS)."

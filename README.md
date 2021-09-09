@@ -15,6 +15,12 @@ this library should first acquaint themselves with the lessons described in the
 and the
 [DOM based XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html).
 
+## _Request to do code review_
+**@Paul** - Please look at ALL the source code and accompanying documentation and not just the
+committed files in this PR for the 'initial-code-review' branch. (If I remember, I'll at least add
+a comment to each of the files so they show up in the PR, but I may forget one or two that
+you think is relevant. Obviously, I will delete this section as well as comments added only
+for code review purposes so you needn't address those.)
 
 ## Installation
 Add the following dependency to your `project.clj`:
