@@ -8,19 +8,8 @@
   described in https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html
   and https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html.
 
-  See the README.md file for additional details."
-  (:import [org.owasp.encoder Encode])
-  )
-
-;; CODE REVIEW - @paul - The implementation of these are all dirt simple and the pattern is the same for all of them.
-;;    What I'm interested in specifically, is given these all use the same pattern, it seems that maybe some other way
-;;    might be preferred in writing these (e.g., macros?).
-;;
-;;    I am also particularly interested in feedback regarding the documentation. (Note that there are several errors
-;;    I've found in the Javadoc for the 'Encode' class. I'm going to be making a PR this weekend to get that corrected,
-;;    but it will probably be awhile until they drop a new release that gets picked up by javadoc.io. Just letting
-;;    you know because you may see a few discrepancies in what's documented here and what is in the referenced Javadoc.)
-;;
+  See https://github.com/Guaranteed-Rate/xss-encoder-wrapper#readme for additional details."
+  (:import [org.owasp.encoder Encode]))
 
 (defn for-html
   "Encodes for (X)HTML text content and text attributes. It is NOT suitable for script attributes, such as
