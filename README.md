@@ -15,20 +15,14 @@ this library should first acquaint themselves with the lessons described in the
 and the
 [DOM based XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html).
 
-## _Request to do code review_
-**@Paul** - Please look at ALL the source code and accompanying documentation and not just the
-committed files in this PR for the 'initial-code-review' branch. (If I remember, I'll at least add
-a comment to each of the files so they show up in the PR, but I may forget one or two that
-you think is relevant. Obviously, I will delete this section as well as comments added only
-for code review purposes so you needn't address those.)
-
 ## Installation
 Add the following dependency to your `project.clj`:
 
-`[xss-encoder-wrapper "0.1.0"]`
+```clojure
+[com.guaranteedrate/xss-encoder-wrapper "1.0.0"]
+```
 
-* **Question**: Do you think the first release should be 0.1.0 or 1.0.0? I generally prefer the latter when except when we wish to convey an Alpha or Beta release. Note regardless, that I will remove the '-SNAPSHOT' before the first _official_ release.
-* _**What else needs to go in this section???**_
+It is available from Clojars.
 
 ## Important design decisions
 
@@ -182,12 +176,13 @@ See the test cases under test/encoder-test.clj
 
 **TODO**: I will try to develop some additional more realistic examples as I learn more Clojure and Ring / Compojure.
 
-## Questions
-Send questions about this library to the author, [kevin.wall@rate.com](mailto:kevin.wall@rate.com), or
-questions about XSS in general to the GRI Application Security team at [AppSec@rate.com](mailto:AppSec@rate.com).
+## Questions / Issues
+If you have questions about this library or find a bug, please open a GitHub issue for it.
 
 ## License
 
-Copyright © 2021 Guaranteed Rate, Inc. -- All Rights Reserved
+This code is copyright by Guaranteed Rate, Inc. and is released under "The MIT License (MIT)".
+See the accompanying [LICENSE](https://github.com/Guaranteed-Rate/xss-encoder-wrapper/blob/main/LICENSE) file for details.
+
 
 This program and the accompanying materials proprietary information of Guaranteed Rate, Inc.
