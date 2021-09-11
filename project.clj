@@ -1,21 +1,21 @@
-;; CODE REVIEW - @paul - Please suggest anything else that should go here or anything that is here that's amiss.
-
-(defproject xss-encoder-wrapper "0.1.0-SNAPSHOT"
+(defproject com.guaranteedrate/xss-encoder-wrapper "1.0.0"
   :description "Provide Clojure wrapper functions to the OWASP Java Encoder library's the important
-               'Encode' static methods as a defense against Cross-Site Scripting (XSS)."
+               'Encode' static methods as a defense against Cross-Site Scripting (XSS) and accompanying
+               extensive general documentation related to XSS defense."
 
-  :url "http://github.com/Giaranteed-Rate/xss-encoder-wrapper"
+  :url "http://github.com/Guaranteed-Rate/xss-encoder-wrapper"
+
+  :license
+  {:name "The MIT License"
+   :url "https://mit-license.org/"}
 
   :author "kevin.wall@rate.com"
-
-  :repositories
-  [["releases" {:url "s3p://polaris-maven/releases/" :no-auth true}
-    "snapshots" {:url "s3p://polaris-maven/snapshots/" :no-auth true}]]
-
-  :plugins [[s3-wagon-private "1.3.4"]]
 
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.owasp.encoder/encoder "1.2.3"]]
 
-  :repl-options {:init-ns xss-encoder-wrapper.encoder}
-  )
+  :deploy-repositories
+  [["releases" :clojars]
+   ["snapshots" :clojars]]
+
+  :repl-options {:init-ns com.guaranteedrate/xss-encoder-wrapper.encoder})
