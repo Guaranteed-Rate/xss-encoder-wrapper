@@ -18,4 +18,4 @@
   [["releases" :clojars]
    ["snapshots" :clojars]]
 
-  :repl-options {:init-ns com.guaranteedrate/xss-encoder-wrapper.encoder})
+  :repl-options {:init-ns xss-encoder-wrapper.encoder})
