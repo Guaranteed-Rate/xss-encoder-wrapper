@@ -181,6 +181,8 @@ If you have questions about this library or find a bug, please open a GitHub iss
 
 ## License
 
+![Guaranteed Rate logo](/gr-logo-150x150.png)
+
 This code is copyright by Guaranteed Rate, Inc. and is released under "The MIT License (MIT)".
 See the accompanying [LICENSE](https://github.com/Guaranteed-Rate/xss-encoder-wrapper/blob/main/LICENSE) file for details.
 
