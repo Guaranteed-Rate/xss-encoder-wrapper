@@ -6,8 +6,8 @@
   :url "http://github.com/Guaranteed-Rate/xss-encoder-wrapper"
 
   :license
-  {:name "The MIT License"
-   :url "https://mit-license.org/"}
+  {:name "The 3-Clause BSD License"
+   :url "https://opensource.org/licenses/BSD-3-Clausehttps://mit-license.org/"}
 
   :author "kevin.wall@rate.com"
 
