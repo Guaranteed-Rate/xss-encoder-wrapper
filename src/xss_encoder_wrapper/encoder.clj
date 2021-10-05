@@ -11,6 +11,8 @@
   See https://github.com/Guaranteed-Rate/xss-encoder-wrapper#readme for additional details."
   (:import [org.owasp.encoder Encode]))
 
+;; Copyright 2021 - Guaranteed Rate, Inc. See accompanying LICENSE file for details.
+
 (defn for-html
   "Encodes for (X)HTML text content and text attributes. It is NOT suitable for script attributes, such as
   'onclick', 'onload', etc. (Use 'for-javascript' for that.) If used with HTML text attributes, the attributes
