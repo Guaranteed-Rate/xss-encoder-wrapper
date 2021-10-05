@@ -50,9 +50,6 @@
     ""
     (Encode/forCssUrl unstrusted-string)))
 
-
-;; here
-
 (defn for-html-attribute
   "Output encode for an HTML text attributes, but is NOT suitable for script attributes or attributes interpreted
   as URLs (e.g., 'href', 'src') by the browser. (You should use 'for-javascript' and 'for-uri-component' for
