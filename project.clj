@@ -11,6 +11,14 @@
 
   :author "kevin.wall@rate.com"
 
+  :pom-addition
+    [:developers
+     [:developer
+      [:name "Kevin Wall"]
+      [:url "https://github.com/kwwall-gri"]
+      [:email "kevin.wall@rate.com"]
+      [:timezone "-5"]]]
+
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.owasp.encoder/encoder "1.2.3"]]
 
