@@ -7,15 +7,16 @@
 
   :license
   {:name "The 3-Clause BSD License"
-   :url "https://opensource.org/licenses/BSD-3-Clausehttps://mit-license.org/"}
+   :url "https://opensource.org/licenses/BSD-3-Clause"}
 
   :author "kevin.wall@rate.com"
 
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.owasp.encoder/encoder "1.2.3"]]
 
-  :deploy-repositories
-  [["releases" :clojars]
-   ["snapshots" :clojars]]
+  :deploy-repositories [["releases" {:url "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+                                   :creds :gpg}
+                       "snapshots" {:url "https://oss.sonatype.org/content/repositories/snapshots/"
+                                    :creds :gpg}]]
 
   :repl-options {:init-ns xss-encoder-wrapper.encoder})
