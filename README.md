@@ -15,6 +15,52 @@ this library should first acquaint themselves with the lessons described in the
 and the
 [DOM based XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.html).
 
+## Why a new Clojure library?
+That's a fair question. Before setting out to create a new library, I researched what
+was already  available for Clojure developers. Oddly, I never even saw the
+[OWASP Java Encoder library](https://owasp.org/www-project-java-encoder/)
+mentioned at all in any of my searches, but I did find a several references to
+[Apache Commons Lang StringEscapeUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringEscapeUtils.html),
+[Hiccup](https://github.com/weavejester/hiccup), and one Clojure library that (sadly) I don't
+recall the name of. I examined all of those to see if they would provide adequate XSS defense and all of
+them came up short. *All* of those libraries lacked output encoding for several specific
+contexts (generally, they were missing CSS and/or JavaScript contexts) and thus were not
+complete.
+
+There were also quite a few other Clojure libraries (Ring, Yada, etc.)
+that I looked at which only addressed XSS defense via the *old* HTTP response headers:
+
+```
+X-Xss-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+```
+
+which helps a little against XSS attacks as defense-in-depth strategy, but one has to wonder if HTTP
+response headers are being used to mitigate XSS attacks, why not use the newer
+and much more powerful `Content-Security-Policy` headers instead? Anyway, these headers
+alone will not remediate all XSS attacks (or even most of the sophisticated ones for
+that matter).
+
+Given the results of my research, the easiest thing to do would have been to just
+point the Clojure community directly to the the
+[OWASP Java Encoder library's](https://owasp.org/www-project-java-encoder/) `Encode`
+class and have them use it directly. It's certainly trivial enough to do. But partly,
+I found the Javadoc for
+[Encode](https://www.javadoc.io/static/org.owasp.encoder/encoder/1.2.3/org/owasp/encoder/Encode.html)
+to be a bit misleading. (I've since made a
+[PR](https://github.com/OWASP/owasp-java-encoder/pull/52) which has
+been merged and should show up in the next release, to address that particular aspect.)
+The bigger problem was that I felt that the documentation for the OWASP Java Encoder library
+already assumed that developers were aware of what XSS was, where it might crop up,
+and the basics of how to defend against it. So instead of telling the Java Encoder Project
+how to write their documentation, I instead have tried  to provide that substantial
+documentation here in this README, along with links to other significant external resources.
+
+The other somewhat annoying aspect to the Java Encoder Project's
+[Encode](https://www.javadoc.io/static/org.owasp.encoder/encoder/1.2.3/org/owasp/encoder/Encode.html)
+class is the quirk of how it treats `null` (which I think should rarely happen in Clojure), but is
+described in more detail under the "**Important design decisions**" section, below.
+
 ## Installation
 Add the following dependency to your `project.clj`:
 
@@ -22,7 +68,7 @@ Add the following dependency to your `project.clj`:
 [com.guaranteedrate/xss-encoder-wrapper "1.0.0"]
 ```
 
-It is available from Clojars.
+It is available from Maven Central.
 
 ## Important design decisions
 
